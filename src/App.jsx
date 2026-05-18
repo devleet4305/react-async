@@ -4,13 +4,15 @@ import { Suspense } from 'react';
 import Bottles from './components/Bottles';
 
 
-const bottlesPromise = async() => {
+const bottlesPromise = async () => {
   const res = await fetch('./bottles.json');
   return res.json();
-}
+};
 
 function App() {
-  const bottles = bottlesPromise();
+  const bottles = bottlesPromise;
+
+  
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
