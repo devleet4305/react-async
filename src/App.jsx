@@ -10,10 +10,11 @@ const bottlesPromise = async() => {
 }
 
 function App() {
+  const bottles = bottlesPromise();
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Bottles bottlesPromise={bottlesPromise}></Bottles>
+        <Bottles bottles={bottles}></Bottles>
       </Suspense>
     </div>
   )
